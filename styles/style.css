@@ -188,7 +188,7 @@ body{padding-top:calc(var(--header-height) + 8px)}
 /* =====================
    SMALL SCREEN ADAPTATIONS
 ===================== */
-@media (max-width:991px){
+@media (max-width:920px){
   .hero{ flex-direction:column; padding:2.5rem 5% }
   .hero-grid{ width:320px;height:320px; flex:0 0 320px; margin-bottom:.8rem }
   .hero-item{ width:120px;height:120px; border-radius:12px }
@@ -203,16 +203,27 @@ body{padding-top:calc(var(--header-height) + 8px)}
   .hero-text{ text-align:center }
 }
 
+@media (min-width:968px){
+  .hero-grid{ width:340px;height:400px; flex:0 0 640px }
+  .hero-item{ width:200px;height:200px }
+  .hero-item.i1{ top:6%; left:15% }
+  .hero-item.i2{ top:4%; right:15% }
+  .hero-item.i3{ top:40%; left:6% }
+  .hero-item.i4{  top:60%; left:15% }
+  .hero-item.i5{ bottom:8%; right:8% }
+  .hero-item.i6{ top:60%; right:15% }
+}
+
 /* DESKTOP TWEAKS */
 @media (min-width:1200px){
-  .hero-grid{ width:640px;height:640px; flex:0 0 640px }
+  .hero-grid{ width:340px;height:400px; flex:0 0 640px }
   .hero-item{ width:200px;height:200px }
-  .hero-item.i1{ top:6%; left:6% }
-  .hero-item.i2{ top:4%; right:8% }
-  .hero-item.i3{ top:40%; left:-6% }
-  .hero-item.i4{ bottom:6%; left:12% }
+  .hero-item.i1{ top:6%; left:15% }
+  .hero-item.i2{ top:4%; right:15% }
+  .hero-item.i3{ top:40%; left:6% }
+  .hero-item.i4{  top:60%; left:15% }
   .hero-item.i5{ bottom:8%; right:8% }
-  .hero-item.i6{ top:30%; right:-6% }
+  .hero-item.i6{ top:60%; right:15% }
 }
 
 /* misc animations used earlier (subtle) */
