@@ -194,12 +194,12 @@ body{padding-top:calc(var(--header-height) + 8px)}
   .hero-grid{ width:320px;height:320px; flex:0 0 320px; margin-bottom:.8rem }
   .hero-item{ width:120px;height:120px; border-radius:12px }
   /* simpler positions for smaller screens */
-  .hero-item.i1{ top:4%; left:4% }
-  .hero-item.i2{ top:4%; right:8% }
-  .hero-item.i3{ top:34%; left:10% }
-  .hero-item.i4{ bottom:6%; left:14% }
-  .hero-item.i5{ bottom:6%; right:8% }
-  .hero-item.i6{ top:26%; right:4% }
+.hero-item.i1 { transform: rotate(0deg) translate(-50%, -50%); }
+.hero-item.i2 { transform: rotate(60deg) translate(-50%, -50%); }
+.hero-item.i3 { transform: rotate(120deg) translate(-50%, -50%); }
+.hero-item.i4 { transform: rotate(180deg) translate(-50%, -50%); }
+.hero-item.i5 { transform: rotate(240deg) translate(-50%, -50%); }
+.hero-item.i6 { transform: rotate(300deg) translate(-50%, -50%); }
 
   .hero-text{ text-align:center }
 }
