@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <input type="text" placeholder="Username" required>
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Password" required>
-        <button type="submit">Create Account</button>
+        <button type="submit" href="pages/signin/home.html">Create Account</button>
       `;
       toggleAuthLink.textContent = 'Sign In';
     } else {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       authForm.innerHTML = `
         <input type="text" placeholder="Username" required>
         <input type="password" placeholder="Password" required>
-        <button type="submit">Login</button>
+        <button type="submit" href="pages/signin/home.html">Login</button>
       `;
       toggleAuthLink.textContent = 'Sign Up';
     }
