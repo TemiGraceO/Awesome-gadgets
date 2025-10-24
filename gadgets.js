@@ -1,16 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu toggle
+  /* =====================
+     MOBILE MENU
+  ===================== */
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
+
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent immediate close
       const isActive = navLinks.classList.toggle('active');
       menuBtn.setAttribute('aria-expanded', isActive);
       navLinks.setAttribute('aria-hidden', !isActive);
     });
+
+    // Click outside to close dropdown
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        navLinks.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Close with ESC key
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        navLinks.setAttribute('aria-hidden', 'true');
+      }
+    });
   }
 
-  // Auth modal controls
+  /* =====================
+     AUTH MODAL + SLIDE
+  ===================== */
   const hero = document.getElementById('hero');
   const authSection = document.getElementById('authSection');
   const closeAuth = document.getElementById('closeAuth');
@@ -24,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openAuth = (mode) => {
     hero.classList.add('slide-out');
     authSection.classList.add('active');
-    setTimeout(() => hero.style.display = 'none', 500);
+    setTimeout(() => (hero.style.display = 'none'), 500);
     setMode(mode);
   };
 
@@ -56,11 +80,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  shopBtn?.addEventListener('click', (e) => { e.preventDefault(); openAuth('signin'); });
-  signinBtn?.addEventListener('click', (e) => { e.preventDefault(); openAuth('signin'); });
-  signupBtn?.addEventListener('click', (e) => { e.preventDefault(); openAuth('signup'); });
+  // Button triggers
+  shopBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAuth('signin');
+  });
+  signinBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAuth('signin');
+  });
+  signupBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAuth('signup');
+  });
   closeAuth?.addEventListener('click', closeModal);
 
+  // Switch between sign in / sign up
   toggleAuthLink?.addEventListener('click', (e) => {
     e.preventDefault();
     setMode(authTitle.textContent === 'Sign In' ? 'signup' : 'signin');
