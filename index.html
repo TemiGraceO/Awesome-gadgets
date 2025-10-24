@@ -14,16 +14,16 @@
       <nav>
         <button id="menuBtn" aria-expanded="false" aria-controls="navLinks">☰</button>
         <ul id="navLinks" aria-hidden="true">
-          <li><a href="pages/signin/signin.html">Signin</a></li>
-          <li><a href="pages/signin/signin.html">Signup</a></li>
+          <li><a href="#" class="signin-btn">Signin</a></li>
+          <li><a href="#" class="signup-btn">Signup</a></li>
           <li>🛒</li>
         </ul>
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <main class="hero" id="hero">
       <div class="hero-grid" aria-hidden="false">
-        <!-- Replace src with your real product images -->
         <img src="images/si.png" alt="Product 1" class="hero-item i1" />
         <img src="images/3.png" alt="Product 2" class="hero-item i2" />
         <img src="images/9.png" alt="Product 3" class="hero-item i3" />
@@ -33,16 +33,29 @@
       </div>
 
       <div class="hero-text">
-        <h2 style="color: #0F172A;">New Season, New Style</h2>
-        <p style="color: #0F172A;">Upgrade your tech experience with next-generation gadgets designed for the future.</p>
-        <a href="pages/signin/signin.html" class="cta-btn">Shop Now</a>
+        <h2>New Season, New Style</h2>
+        <p>Upgrade your tech experience with next-generation gadgets designed for the future.</p>
+        <a href="#" class="cta-btn shop-btn">Shop Now</a>
       </div>
 
-      <!-- WhatsApp: fixed and static -->
       <a href="https://wa.me/2348137339046" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
     </main>
+
+    <!-- Hidden Slide-Up Auth Section -->
+    <section class="auth-section" id="authSection">
+      <div class="auth-card">
+        <span class="close-auth" id="closeAuth">&times;</span>
+        <h2 id="authTitle">Sign In</h2>
+        <form id="authForm">
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <p class="toggle-auth">Don’t have an account? <a href="#" id="toggleAuthLink">Sign Up</a></p>
+      </div>
+    </section>
   </div>
 
   <script src="gadgets.js"></script>
