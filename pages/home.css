@@ -25,6 +25,14 @@ header {
   font-weight: 700;
   color: #1E40AF;
 }
+.add-to-cart{
+  background-color: #1E40AF;
+  color: white;
+  border: 1px solid #06b0d4;
+  padding: 8px 15px 8px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
 .gad {
   color: #06b6d4;
 }
@@ -100,7 +108,10 @@ nav ul li a:hover {
   position: absolute;
   bottom: 15px;
   left: 20px;
-  color: white;
+  color:white;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #2c54c4;
   text-shadow: 0 2px 6px rgba(0,0,0,0.5);
   font-size: 1.2rem;
 }
@@ -109,6 +120,9 @@ nav ul li a:hover {
 }
 .category-card:hover {
   transform: translateY(-6px);
+}
+#menuBtn{
+  display: none;
 }
 
 /* =============== TRENDING PRODUCTS =============== */
@@ -128,7 +142,7 @@ nav ul li a:hover {
   gap: 1.5rem;
 }
 .product-card {
-  background: white;
+  background: linear-gradient(120deg, #698cee, #478bf8);
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   padding: 1rem;
@@ -152,6 +166,17 @@ nav ul li a:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+/* =====================
+   WHATSAPP FLOAT (fixed)
+===================== */
+.whatsapp-float{
+  position:fixed; right:24px; bottom:24px; width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:#25D366;box-shadow:0 10px 30px rgba(0,0,0,.16);
+  z-index:1200; transition:transform .3s ease,box-shadow .3s ease;
+}
+.whatsapp-float img{ width:30px;height:30px; display:block; filter:none }
+.whatsapp-float:hover{ transform:translateY(-6px) scale(1.06); box-shadow:0 18px 40px rgba(0,0,0,.22) }
+
 
 /* =============== FOOTER =============== */
 footer {
@@ -161,4 +186,18 @@ footer {
   color: white;
   font-size: 0.9rem;
   margin-top: 3rem;
+}
+@media (max-width:920px){
+  #menuBtn{
+    display: flex;
+    background: none;
+    border: none;
+    cursor:pointer;
+    display:block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  nav ul li{
+    display: none;
+  }
 }

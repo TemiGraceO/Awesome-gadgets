@@ -10,14 +10,14 @@
 <body>
   <header>
     <h3 class="brand">AWESOME<span class="gad">GADGETS</span></h3>
-    <nav>
+    <nav id="navLinks">
+      
       <ul>
+        <button id="menuBtn" aria-expanded="false" aria-controls="navLinks">☰</button>
         <li><a href="home.html">Home</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="categories.html">Categories</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart 🛒</a></li>
-
         <li><a href="../index.html" class="logout">Logout</a></li>
       </ul>
     </nav>
@@ -37,20 +37,21 @@
       <h2>Featured Categories</h2>
       <div class="category-grid">
         <div class="category-card">
-          <img src="../../images/smartwatch.jpg" alt="Smart Watches">
+          <img src="../../images/bg.png" alt="Smart Watches">
           <h3>Smart Watches</h3>
         </div>
         <div class="category-card">
-          <img src="../../images/headphones.jpg" alt="Headphones">
+          <img src="../../images/2.png" alt="Headphones">
           <h3>Headphones</h3>
         </div>
         <div class="category-card">
-          <img src="../../images/drones.jpg" alt="Drones">
+          <img src="../../images/3.png" alt="Drones">
           <h3>Drones</h3>
         </div>
         <div class="category-card">
-          <img src="../../images/speakers.jpg" alt="Bluetooth Speakers">
+          <img src="../../images/4.png" alt="Bluetooth Speakers">
           <h3>Speakers</h3>
+          
         </div>
       </div>
     </section>
@@ -61,30 +62,38 @@
       <div class="product-grid">
         <div class="product-card">
           <img src="../../images/1.png" alt="Wireless Earbuds">
-          <h4>Wireless Earbuds</h4>
+          <h4 style="color: white;">Wireless Earbuds</h4>
           <p>$49.99</p>
+          <button class="add-to-cart">Add to Cart 🛒</button>
         </div>
         <div class="product-card">
           <img src="../../images/2.png" alt="Smartphone Gimbal">
-          <h4>Smartphone Gimbal</h4>
+          <h4 style="color: white;">Smartphone Gimbal</h4>
           <p>$89.99</p>
+          <button class="add-to-cart">Add to Cart 🛒</button>
         </div>
         <div class="product-card">
           <img src="../../images/3.png" alt="VR Headset">
-          <h4>VR Headset</h4>
+          <h4 style="color: white;">VR Headset</h4>
           <p>$149.99</p>
+          <button class="add-to-cart">Add to Cart 🛒</button>
         </div>
         <div class="product-card">
           <img src="../../images/4.png" alt="Portable Projector">
-          <h4>Portable Projector</h4>
-          <p>$129.99</p>
+          <h4 style="color: white;">Portable Projector</h4>
+          <p>#129,000</p>
+          <button class="add-to-cart">Add to Cart 🛒</button>
         </div>
       </div>
     </section>
   </main>
-
+    </section>
+    <a href="https://wa.me/2348137339046" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
   <footer>
     <p>&copy; 2025 AWESOME GADGETS. All rights reserved.</p>
   </footer>
+  <script src="home.js"></script>
 </body>
 </html>
