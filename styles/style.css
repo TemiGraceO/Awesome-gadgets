@@ -167,6 +167,7 @@ body{padding-top:calc(var(--header-height) + 8px)}
   100%{ transform: translateY(0) }
 }
 
+
 /* assign entrance + float + stagger using nth-child style classes */
 .hero-item.i1{ animation: enterFromLeft .7s ease .12s forwards, floatY 6s ease-in-out 1.5s infinite; animation-fill-mode:both; }
 .hero-item.i2{ animation: enterFromTop .8s ease .18s forwards, floatY 6.5s ease-in-out 2s infinite; }
@@ -293,7 +294,7 @@ body{padding-top:calc(var(--header-height) + 8px)}
   bottom: -100%;
   width: 100%;
   height: 80vh;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, #f8faff, #e4ecff 60%, #f2f7ff 100%);
   backdrop-filter: blur(14px);
   display: flex;
   justify-content: center;
