@@ -1,0 +1,164 @@
+/* =============== GLOBAL =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 30% 40%, #e0f2fe, #dbeafe 70%, #f2f7ff);
+  color: #0f172a;
+  overflow-x: hidden;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.brand {
+  font-weight: 700;
+  color: #1E40AF;
+}
+.gad {
+  color: #06b6d4;
+}
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+nav ul li a {
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .3s ease;
+}
+nav ul li a:hover {
+  color: #2563eb;
+}
+.logout {
+  color: crimson;
+  font-weight: 600;
+}
+
+/* =============== HERO =============== */
+.home-hero {
+  background: linear-gradient(120deg, #1e3a8a, #3b82f6);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-radius: 0 0 50px 50px;
+  position: relative;
+}
+.home-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+.home-hero p {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =============== CATEGORIES =============== */
+.categories {
+  padding: 4rem 6%;
+  text-align: center;
+}
+.categories h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.8rem;
+}
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+.category-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.category-card h3 {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+}
+.category-card:hover img {
+  transform: scale(1.1);
+}
+.category-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =============== TRENDING PRODUCTS =============== */
+.trending {
+  padding: 3rem 6%;
+  background: #f8fafc;
+  text-align: center;
+}
+.trending h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 1rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.product-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+}
+.product-card h4 {
+  margin: 0.6rem 0 0.3rem;
+  font-size: 1rem;
+  color: #1e40af;
+}
+.product-card p {
+  color: #0f172a;
+  font-weight: 600;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* =============== FOOTER =============== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #1e3a8a;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
