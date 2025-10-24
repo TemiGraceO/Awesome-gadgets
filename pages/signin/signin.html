@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign In / Sign Up</title>
+</head>
+<body>
+    <div>
+        <section>
+            <div class="container">
+  <div class="tabs">
+    <div class="tab active" id="signInTab">Sign In</div>
+    <div class="tab" id="signUpTab">Sign Up</div>
+  </div>
+
+  <form id="signInForm" class="active">
+    <input type="email" placeholder="Registration Number" required />
+    <input type="password" placeholder="Password" required />
+    <div class="links">
+      <a href="#">Forgot password?</a>
+      <a href="#" id="switchToSignUp">No account yet?</a>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <form id="signUpForm">
+    <input type="text" placeholder="First Name" required />
+    <input type="text" placeholder="Last Name" required />
+    <input type="text" placeholder="Other Name" />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <label for="class">Select Role:
+    <select id="class" name="class" style="padding-left: 10px;">
+    <option>Student</option>
+    <option>Academic Staff</option>
+    <option>Non-Academic Staff</option>
+    <option>Parent</option></label>
+    </select>
+    <br><h5 style="margin-top: 10px;">Check Email for Your Registration Number</h5>
+    <div class="links">
+      <a href="#" id="switchToSignIn">Already have an account?</a>
+    </div>
+    <button type="submit">Create Account</button>
+  </form>
+</div>
+        </section>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

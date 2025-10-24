@@ -1,0 +1,80 @@
+* {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('bg.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background:linear-gradient(30deg, rgb(109, 109, 196),rgb(117, 117, 237), rgb(37, 37, 175));
+      border-radius: 15px;
+      padding: 2rem;
+      width: 350px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      color: white;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-weight: bold;
+    }
+
+    .tab.active {
+      border-color: white;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      margin-bottom: 1rem;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem;
+      background: #ffffff33;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffffff55;
+    }
+
+    #switchToSignIn{
+        margin-top: 20px;
+    }
