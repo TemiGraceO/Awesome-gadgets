@@ -10,14 +10,13 @@
 <body>
   <header>
     <h3 class="brand">AWESOME<span class="gad">GADGETS</span></h3>
-    <nav id="navLinks">
-      
+    <nav>
       <ul>
         <button id="menuBtn" aria-expanded="false" aria-controls="navLinks">☰</button>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="categories.html">Categories</a></li>
-        <li><a href="cart.html">Cart 🛒</a></li>
+        <li><a href="#" id="homeLink">Home</a></li>
+        <li><a href="#" id="dashboardLink">Dashboard</a></li>
+        <li><a href="#" id="categoriesLink">Categories</a></li>
+        <li><a href="#" id="cartLink">Cart 🛒 <span class="cart-badge" aria-hidden="true">0</span></a></li>
         <li><a href="../index.html" class="logout">Logout</a></li>
       </ul>
     </nav>
@@ -25,7 +24,7 @@
 
   <main>
     <!-- HERO -->
-    <section class="home-hero">
+    <section class="home-hero" id="homeSection">
       <div class="hero-content">
         <h1>Explore the Future of Technology</h1>
         <p>Discover innovative gadgets designed to simplify your life and enhance your world.</p>
@@ -33,7 +32,7 @@
     </section>
 
     <!-- FEATURED CATEGORIES -->
-    <section class="categories">
+    <section class="categories" id="featuredCategories">
       <h2>Featured Categories</h2>
       <div class="category-grid">
         <div class="category-card">
@@ -51,49 +50,149 @@
         <div class="category-card">
           <img src="../../images/4.png" alt="Bluetooth Speakers">
           <h3>Speakers</h3>
-          
         </div>
       </div>
     </section>
 
     <!-- TRENDING PRODUCTS -->
-    <section class="trending">
+    <section class="trending" id="trendingProducts">
       <h2>Trending Products</h2>
       <div class="product-grid">
-        <div class="product-card">
+        <!-- product-card structure includes data attributes used by JS -->
+        <div class="product-card" data-name="Wireless Earbuds" data-price="49.99" data-image="../../images/1.png" data-desc="True wireless earbuds with great battery life and crisp sound.">
           <img src="../../images/1.png" alt="Wireless Earbuds">
-          <h4 style="color: white;">Wireless Earbuds</h4>
-          <p>$49.99</p>
-          <button class="add-to-cart">Add to Cart 🛒</button>
+          <h4>Wireless Earbuds</h4>
+          <p class="price">$49.99</p>
+          <button class="product-add-btn">View & Add</button>
         </div>
-        <div class="product-card">
+
+        <div class="product-card" data-name="Smartphone Gimbal" data-price="89.99" data-image="../../images/2.png" data-desc="Smooth stabilization for cinematic phone footage.">
           <img src="../../images/2.png" alt="Smartphone Gimbal">
-          <h4 style="color: white;">Smartphone Gimbal</h4>
-          <p>$89.99</p>
-          <button class="add-to-cart">Add to Cart 🛒</button>
+          <h4>Smartphone Gimbal</h4>
+          <p class="price">$89.99</p>
+          <button class="product-add-btn">View & Add</button>
         </div>
-        <div class="product-card">
+
+        <div class="product-card" data-name="VR Headset" data-price="149.99" data-image="../../images/3.png" data-desc="Immersive VR headset with high resolution displays.">
           <img src="../../images/3.png" alt="VR Headset">
-          <h4 style="color: white;">VR Headset</h4>
-          <p>$149.99</p>
-          <button class="add-to-cart">Add to Cart 🛒</button>
+          <h4>VR Headset</h4>
+          <p class="price">$149.99</p>
+          <button class="product-add-btn">View & Add</button>
         </div>
-        <div class="product-card">
+
+        <div class="product-card" data-name="Portable Projector" data-price="129000" data-image="../../images/4.png" data-desc="Portable projector for home cinema (price in NGN).">
           <img src="../../images/4.png" alt="Portable Projector">
-          <h4 style="color: white;">Portable Projector</h4>
-          <p>#129,000</p>
-          <button class="add-to-cart">Add to Cart 🛒</button>
+          <h4>Portable Projector</h4>
+          <p class="price">#129,000</p>
+          <button class="product-add-btn">View & Add</button>
         </div>
       </div>
     </section>
   </main>
-    </section>
-    <a href="https://wa.me/2348137339046" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      </a>
+
+  <!-- ======================
+       DASHBOARD SLIDE-IN
+  ====================== -->
+  <div class="dashboard-overlay" aria-hidden="true">
+    <div class="dashboard">
+      <button class="close-dashboard" aria-label="Close Dashboard">✖</button>
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="avatar">AG</div>
+          <div class="profile-info">
+            <strong>Guest User</strong>
+            <small>Welcome back!</small>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li data-section="orders" class="active">📦 Order History</li>
+          <li data-section="addresses">🏠 Saved Addresses</li>
+          <li data-section="wishlist">💖 Wishlist</li>
+        </ul>
+      </aside>
+
+      <section class="content">
+        <div class="section" id="orders">
+          <h2>Order History</h2>
+          <p>No orders yet — start shopping and they'll appear here.</p>
+        </div>
+
+        <div class="section hidden" id="addresses">
+          <h2>Saved Addresses</h2>
+          <p>You don't have any saved addresses yet.</p>
+        </div>
+
+        <div class="section hidden" id="wishlist">
+          <h2>Wishlist</h2>
+          <p>Your wishlist is empty.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ======================
+       CATEGORIES SLIDE-IN
+  ====================== -->
+  <div class="categories-overlay" aria-hidden="true">
+    <div class="categories-panel">
+      <button class="close-categories" aria-label="Close Categories">✖</button>
+      <h2>Shop by Category</h2>
+
+      <div class="product-grid categories-list">
+        <div class="product-card" data-name="Smart Watch" data-price="69.99" data-image="../../images/bg.png" data-desc="Track your fitness and notifications easily.">
+          <img src="../../images/bg.png" alt="Smart Watch">
+          <h4>Smart Watch</h4>
+          <p class="price">$69.99</p>
+          <button class="product-add-btn">View & Add</button>
+        </div>
+
+        <div class="product-card" data-name="Headphones" data-price="89.99" data-image="../../images/2.png" data-desc="Noise-cancelling wireless headphones with deep bass.">
+          <img src="../../images/2.png" alt="Headphones">
+          <h4>Headphones</h4>
+          <p class="price">$89.99</p>
+          <button class="product-add-btn">View & Add</button>
+        </div>
+
+        <div class="product-card" data-name="Drone" data-price="149.99" data-image="../../images/3.png" data-desc="Capture breathtaking 4K aerial shots.">
+          <img src="../../images/3.png" alt="Drone">
+          <h4>Drone</h4>
+          <p class="price">$149.99</p>
+          <button class="product-add-btn">View & Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================
+       CART SLIDE-IN
+  ====================== -->
+  <div class="cart-overlay" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-label="Shopping cart">
+      <button class="close-cart" aria-label="Close Cart">✖</button>
+      <h2>Your Cart 🛒</h2>
+
+      <div class="cart-items" aria-live="polite"></div>
+
+      <div class="cart-summary">
+        <h3>Total: <span class="cart-total">$0.00</span></h3>
+        <div class="cart-actions">
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product modal (created in DOM by JS) -->
+
+  <!-- WhatsApp Float (always visible) -->
+  <a href="https://wa.me/2348137339046" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
   <footer>
     <p>&copy; 2025 AWESOME GADGETS. All rights reserved.</p>
   </footer>
+
   <script src="home.js"></script>
 </body>
 </html>
