@@ -16,7 +16,7 @@
         <li><a href="#" id="homeLink">Home</a></li>
         <li><a href="#" id="dashboardLink">Dashboard</a></li>
         <li><a href="#" id="categoriesLink">Categories</a></li>
-        <li><a href="#" id="cartLink">Cart 🛒 <span class="cart-badge" aria-hidden="true">0</span></a></li>
+        <li><a href="#" id="cartLink">Cart <span class="cart-badge" aria-hidden="true">0</span></a></li>
         <li><a href="../index.html" class="logout">Logout</a></li>
       </ul>
     </nav>
@@ -37,19 +37,19 @@
       <div class="category-grid">
         <div class="category-card">
           <img src="../../images/bg.png" alt="Smart Watches">
-          <h3>Smart Watches</h3>
+          <h3 style="color: white;">Smart Phones</h3>
         </div>
         <div class="category-card">
           <img src="../../images/2.png" alt="Headphones">
-          <h3>Headphones</h3>
+          <h3 style="color: white;">Speakers</h3>
         </div>
         <div class="category-card">
           <img src="../../images/3.png" alt="Drones">
-          <h3>Drones</h3>
+          <h3 style="color: white;">Tablets</h3>
         </div>
         <div class="category-card">
           <img src="../../images/4.png" alt="Bluetooth Speakers">
-          <h3>Speakers</h3>
+          <h3 style="color: white;">Wireless Earbuds</h3>
         </div>
       </div>
     </section>
@@ -61,29 +61,29 @@
         <!-- product-card structure includes data attributes used by JS -->
         <div class="product-card" data-name="Wireless Earbuds" data-price="49.99" data-image="../../images/1.png" data-desc="True wireless earbuds with great battery life and crisp sound.">
           <img src="../../images/1.png" alt="Wireless Earbuds">
-          <h4>Wireless Earbuds</h4>
-          <p class="price">$49.99</p>
+          <h4>Television</h4>
+          <p class="price">#135,000</p>
           <button class="product-add-btn">View & Add</button>
         </div>
 
         <div class="product-card" data-name="Smartphone Gimbal" data-price="89.99" data-image="../../images/2.png" data-desc="Smooth stabilization for cinematic phone footage.">
           <img src="../../images/2.png" alt="Smartphone Gimbal">
-          <h4>Smartphone Gimbal</h4>
-          <p class="price">$89.99</p>
+          <h4>Speaker</h4>
+          <p class="price">#50,000</p>
           <button class="product-add-btn">View & Add</button>
         </div>
 
         <div class="product-card" data-name="VR Headset" data-price="149.99" data-image="../../images/3.png" data-desc="Immersive VR headset with high resolution displays.">
           <img src="../../images/3.png" alt="VR Headset">
-          <h4>VR Headset</h4>
-          <p class="price">$149.99</p>
+          <h4>Tablet</h4>
+          <p class="price">#95,000</p>
           <button class="product-add-btn">View & Add</button>
         </div>
 
         <div class="product-card" data-name="Portable Projector" data-price="129000" data-image="../../images/4.png" data-desc="Portable projector for home cinema (price in NGN).">
           <img src="../../images/4.png" alt="Portable Projector">
-          <h4>Portable Projector</h4>
-          <p class="price">#129,000</p>
+          <h4>Wireless Earbuds</h4>
+          <p class="price">#35,000</p>
           <button class="product-add-btn">View & Add</button>
         </div>
       </div>
@@ -105,9 +105,9 @@
           </div>
         </div>
         <ul class="sidebar-nav">
-          <li data-section="orders" class="active">📦 Order History</li>
-          <li data-section="addresses">🏠 Saved Addresses</li>
-          <li data-section="wishlist">💖 Wishlist</li>
+          <li data-section="orders" class="active">Order History</li>
+          <li data-section="addresses">Saved Addresses</li>
+          <li data-section="wishlist">Wishlist</li>
         </ul>
       </aside>
 
@@ -159,8 +159,11 @@
           <p class="price">$149.99</p>
           <button class="product-add-btn">View & Add</button>
         </div>
+
+        
       </div>
     </div>
+    
   </div>
 
   <!-- ======================
@@ -169,12 +172,12 @@
   <div class="cart-overlay" aria-hidden="true">
     <div class="cart-panel" role="dialog" aria-label="Shopping cart">
       <button class="close-cart" aria-label="Close Cart">✖</button>
-      <h2>Your Cart 🛒</h2>
+      <h2>Your Cart</h2>
 
       <div class="cart-items" aria-live="polite"></div>
 
       <div class="cart-summary">
-        <h3>Total: <span class="cart-total">$0.00</span></h3>
+        <h3>Total: <span class="cart-total">#0.00</span></h3>
         <div class="cart-actions">
           <button class="checkout-btn">Proceed to Checkout</button>
         </div>
@@ -190,7 +193,7 @@
   </a>
 
   <footer>
-    <p>&copy; 2025 AWESOME GADGETS. All rights reserved.</p>
+    <p>&copy; 2025 AWESOME GADGETS.</p>
   </footer>
 
   <script src="home.js"></script>

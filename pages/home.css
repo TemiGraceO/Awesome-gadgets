@@ -8,7 +8,6 @@
   --glass: rgba(255,255,255,0.6);
 }
 body {
-  font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at 30% 40%, #e0f2fe, #dbeafe 70%, #f2f7ff);
   color: #0f172a;
   overflow-x: hidden;
@@ -34,7 +33,7 @@ nav ul li a:hover { color: var(--primary); }
 
 /* cart badge */
 .cart-badge {
-  background: var(--accent);
+  background:#2563eb;
   color: white;
   font-size: 0.7rem;
   padding: 2px 6px;
@@ -43,7 +42,9 @@ nav ul li a:hover { color: var(--primary); }
   vertical-align: middle;
   display:inline-block;
 }
-
+.logout{
+  color: red;
+}
 /* HERO */
 .home-hero {
   background: linear-gradient(120deg, var(--primary), #3b82f6);

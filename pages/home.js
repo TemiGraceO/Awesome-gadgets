@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* --------------------
      Elements & selectors
   -------------------- */
+  
   const menuBtn = document.getElementById("menuBtn");
   const navUl = document.querySelector("nav ul");
 
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p class="desc"></p>
       <p class="price"></p>
       <div style="display:flex;gap:10px;align-items:center;margin-top:10px;">
-        <button class="add-to-cart-btn">Add to Cart 🛒</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
         <button class="close-modal secondary">Close</button>
       </div>
     </div>

@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (menuBtn && navLinks) {
-    // Toggle dropdown
     menuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isActive = navLinks.classList.toggle('active');
@@ -20,21 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.setAttribute('aria-hidden', !isActive);
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-        closeMenu();
-      }
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
     });
 
-    // Close menu with ESC key
     document.addEventListener('keyup', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
   }
 
   /* =====================
-     AUTH MODAL LOGIC
+     AUTH LOGIC
   ===================== */
   const hero = document.getElementById('hero');
   const authSection = document.getElementById('authSection');
@@ -47,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleAuthLink = document.getElementById('toggleAuthLink');
 
   let currentMode = 'signin';
+  let users = JSON.parse(localStorage.getItem('awesomeUsers')) || [];
 
   const setAuthMode = (mode) => {
     currentMode = mode;
@@ -57,14 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     authForm.innerHTML = isSignup
       ? `
-        <input type="text" placeholder="Username" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
         <button type="submit">Create Account</button>
       `
       : `
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
         <button type="submit">Login</button>
       `;
   };
@@ -73,8 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setAuthMode(mode);
     hero.classList.add('slide-out');
     authSection.classList.add('active');
-
-    // hide hero after slide animation
     setTimeout(() => (hero.style.display = 'none'), 500);
   };
 
@@ -85,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     authSection.classList.remove('active');
   };
 
-  // Event Listeners for opening
   [shopBtn, signinBtn, signupBtn].forEach((btn) => {
     btn?.addEventListener('click', (e) => {
       e.preventDefault();
@@ -93,25 +86,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close modal
   closeAuth?.addEventListener('click', closeAuthModal);
 
-  // Switch between sign-in / sign-up
   toggleAuthLink?.addEventListener('click', (e) => {
     e.preventDefault();
     setAuthMode(currentMode === 'signin' ? 'signup' : 'signin');
   });
 
-  // Redirect on form submit
+  /* =====================
+     AUTH FORM SUBMISSION
+  ===================== */
   authForm?.addEventListener('submit', (e) => {
     e.preventDefault();
+    const username = authForm.querySelector('#username').value.trim();
+    const password = authForm.querySelector('#password').value.trim();
+    const emailInput = authForm.querySelector('#email');
+    const email = emailInput ? emailInput.value.trim() : null;
 
+    let message = '';
     const submitBtn = authForm.querySelector('button');
-    submitBtn.textContent = currentMode === 'signup' ? 'Creating...' : 'Logging in...';
     submitBtn.disabled = true;
+    submitBtn.textContent = currentMode === 'signup' ? 'Creating...' : 'Logging in...';
 
     setTimeout(() => {
-      window.location.href = 'pages/home.html';
-    }, 1000);
+      if (currentMode === 'signup') {
+        const existing = users.find(u => u.username === username);
+        if (existing) {
+          message = '⚠️ Username already exists.';
+        } else {
+          users.push({ username, email, password });
+          localStorage.setItem('awesomeUsers', JSON.stringify(users));
+          message = '✅ Account created successfully! Please sign in.';
+          setAuthMode('signin');
+        }
+      } else {
+        const found = users.find(u => u.username === username && u.password === password);
+        if (found) {
+          message = `🎉 Welcome back, ${found.username}! Redirecting...`;
+          localStorage.setItem('awesomeLoggedUser', JSON.stringify(found));
+          setTimeout(() => {
+            window.location.href = 'pages/home.html';
+          }, 1000);
+        } else {
+          message = '❌ Invalid username or password.';
+        }
+      }
+
+      alert(message);
+      submitBtn.disabled = false;
+      submitBtn.textContent = currentMode === 'signup' ? 'Create Account' : 'Login';
+    }, 800);
   });
 });
